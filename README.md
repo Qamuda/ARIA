@@ -1,4 +1,4 @@
-# ARIA — Adaptive Routine Intelligence Agent
+# ARIA — Adaptive Routine Intelligence Assistant.txt
 
 On-device personal assistant that learns individual behavioral patterns
 and delivers proactive, context-aware suggestions without cloud dependency.

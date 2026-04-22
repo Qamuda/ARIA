@@ -1,0 +1,11 @@
+models/
+*.pkl
+__pycache__/
+*.pyc
+.idea/
+venv/
+*.csv
+.cache/
+aria_log.json
+dataset_inspection.txt
+output.txt
