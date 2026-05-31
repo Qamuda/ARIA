@@ -1,0 +1,221 @@
+:root {
+  --bg:           #0d1117;
+  --bg-card:      #111827;
+  --bg-elevated:  #161f2e;
+  --border:       #1e2a3a;
+  --border-soft:  #243040;
+
+  --text:         #c9d1d9;
+  --text-muted:   #6e7f91;
+  --text-heading: #e6edf3;
+
+  --blue:         #378add;
+  --blue-dim:     rgba(55, 138, 221, 0.12);
+  --pink:         #d4537e;
+  --pink-dim:     rgba(212, 83, 126, 0.12);
+  --green:        #1d9e75;
+  --green-dim:    rgba(29, 158, 117, 0.12);
+
+  --radius-sm:    6px;
+  --radius:       10px;
+  --radius-lg:    16px;
+
+  --shadow:       0 4px 24px rgba(0, 0, 0, 0.4);
+
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--bg);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+code {
+  font-family: var(--mono);
+  font-size: 0.875em;
+  background: var(--bg-elevated);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  color: var(--text-heading);
+}
+
+::selection {
+  background: var(--blue-dim);
+  color: var(--text-heading);
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* App layout */
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 72px 40px 48px;
+  gap: 20px;
+}
+
+.brand {
+  position: absolute;
+  top: 24px;
+  left: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: 0.14em;
+}
+
+.brand-sub {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* react-tabs dark theme override */
+.react-tabs {
+  display: flex;
+  flex-direction: column;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+  display: inline-flex;
+  align-self: flex-end;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 0 0 28px;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+
+.react-tabs__tab {
+  list-style: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: color 0.15s, background 0.15s;
+  user-select: none;
+}
+
+.react-tabs__tab:hover {
+  color: var(--text);
+  background: var(--bg-elevated);
+}
+
+.react-tabs__tab--selected {
+  color: var(--blue);
+  background: var(--blue-dim);
+  border: none;
+}
+
+.react-tabs__tab:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
+.react-tabs__tab:focus:after {
+  display: none;
+}
+
+.react-tabs__tab--disabled {
+  color: var(--border-soft);
+  cursor: not-allowed;
+}
+
+.react-tabs__tab-panel {
+  display: none;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  :root { font-size: 15px; }
+  .app  { padding: 64px 16px 32px; }
+  .brand { top: 16px; left: 16px; }
+
+  .react-tabs__tab-list {
+    display: flex;
+    align-self: stretch;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+  .react-tabs__tab-list::-webkit-scrollbar { display: none; }
+  .react-tabs__tab { white-space: nowrap; }
+}

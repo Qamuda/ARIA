@@ -1,0 +1,138 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.aboutBanner {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.aboutBanner img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .aboutBanner img { height: 160px; }
+}
+
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.title    { font-size: 1.8rem; margin-bottom: 4px; }
+.subtitle { font-size: 0.9rem; color: var(--text-muted); }
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.summary p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+/* Principles */
+.principlesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.principleItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.principleItem p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Stack table */
+.stackTable {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.stackRow {
+  display: grid;
+  grid-template-columns: 160px 200px 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.stackRow:last-child { border-bottom: none; }
+
+.stackLayer {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.stackDetail {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* Module table */
+.moduleTable {
+  display: flex;
+  flex-direction: column;
+}
+
+.moduleRow {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.moduleRow:last-child { border-bottom: none; }
+
+.moduleFile {
+  font-size: 0.85rem;
+  color: var(--blue);
+}
+
+.moduleRole {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .principlesGrid      { grid-template-columns: 1fr 1fr; }
+  .stackRow            { grid-template-columns: 1fr; gap: 6px; }
+  .stackDetail         { display: none; }
+}
+
+@media (max-width: 600px) {
+  .principlesGrid      { grid-template-columns: 1fr; }
+  .moduleRow           { grid-template-columns: 1fr; gap: 4px; }
+}

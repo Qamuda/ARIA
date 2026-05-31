@@ -1,0 +1,13 @@
+# IDE
+.idea/
+*.idea/
+*.iml
+backend/models/
+*.pkl
+
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/

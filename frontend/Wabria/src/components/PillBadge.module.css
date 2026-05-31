@@ -1,0 +1,30 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.blue {
+  color: var(--blue);
+  background: var(--blue-dim);
+  border-color: rgba(55, 138, 221, 0.25);
+}
+
+.pink {
+  color: var(--pink);
+  background: var(--pink-dim);
+  border-color: rgba(212, 83, 126, 0.25);
+}
+
+.green {
+  color: var(--green);
+  background: var(--green-dim);
+  border-color: rgba(29, 158, 117, 0.25);
+}
